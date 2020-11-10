@@ -4,8 +4,8 @@ module.exports = (object) => {
         let [epId, s, e] = state.episode
         const name = string.split(epId)
         state.episode = {
-            s: parseInt(s,10),
-            e: parseInt(e,10),
+            s: s ? parseInt(s,10): null,
+            e: e ? parseInt(e,10): null,
             epId,
             name: name[1].replace(/^\s+|\s+$/g, '')   
         }

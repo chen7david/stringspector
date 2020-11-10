@@ -9,5 +9,9 @@ module.exports = [
     'DDP5',
     'AMZN',
     'x265-SiGMA',
-    '[rartv]'
+    '[rartv]',
+    'mvk',
+    '265-sigma',
+    'amzn',
+    'web-dl'
 ]
