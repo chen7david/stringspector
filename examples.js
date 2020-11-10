@@ -1,6 +1,6 @@
 module.exports = {
     movies: [
-        'Dear Ex (2018) 720p WEB-DL x264 650MB (nItRo)-XpoZ',
+        'Dear Ex (2018) 720p WEB-DL x264 650MB #12 (nItRo)-XpoZ',
         'Hamilton (2020) [1080p] [WEBRip] [5.1] [YTS.MX]',
         'Interreflections (2020) [1080p] [WEBRip] [YTS.MX]',
         'Jungle Beat The Movie (2020) [1080p] [WEBRip] [5.1] [YTS.MX]',
@@ -11,8 +11,8 @@ module.exports = {
         'The King Of Staten Island (2020) [1080p] [WEBRip] [5.1] [YTS.MX]'
     ],
     shows: [
-        'Dragon Ball Z Kai The Complete Series   (2009–2015)',
-        'Grey Anatomy Season 1Complete widescreen',
+        'Dragon  Ball Z Kai The Complete Series ff12 (2009–2015)',
+        'Grey Anatomy Season 1 Complete widescreen',
         'Rick.and.Morty.S04E06.1080p.WEBRip.x264-CAFFEiNE[TGx]',
         'Star.Trek.Discovery.S03E01.1080p.WEB.H264-CAKES[TGx]',
         'Star.Trek.Picard.S01E10.iNTERNAL.1080p.WEB.x264-BAMBOOZLE[TGx]',

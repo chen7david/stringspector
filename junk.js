@@ -3,5 +3,11 @@ module.exports = [
     '1080p', 
     'WEBRip', 
     'webrip', 
-    'tgx'
+    'tgx',
+    'h264-cakes',
+    'web',
+    'DDP5',
+    'AMZN',
+    'x265-SiGMA',
+    '[rartv]'
 ]

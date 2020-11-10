@@ -6,5 +6,8 @@ module.exports = {
     ],
     year: [
         /\b(19|20)\d{2}\b/,
-    ]
+    ],
+    id: [
+        /ff\d*/,
+    ],
 }

@@ -23,14 +23,8 @@ class StringSpector {
             }
         }
         if(this.mutator) Object.assign(this.state, this.mutator(this))
+        this.clean()
         return this
-    }
-
-    clean(){
-        return this.string
-            .replace(/:/g,' -')
-            .replace(/\//g,' ')
-            .replace(/\s\s+/g, ' ')
     }
 
     filter(){
@@ -39,6 +33,14 @@ class StringSpector {
         if(this.junk) string = string.filter(el => !this.junk.includes(el))
         this.string = string.join(' ')
         return this
+    }
+
+    clean(){
+        const remove = []
+        if(this.state.year) remove.push(this.state.year)
+        if(this.state.id) remove.push('ff'+this.state.id)
+        if(this.state.episode) remove.push(this.state.episode.epId)
+        return remove
     }
 
     get(){
