@@ -1,4 +1,5 @@
 const dd = (val) => console.log(val)
+
 class StringSpector {
 
     constructor(options = {}){
@@ -14,14 +15,14 @@ class StringSpector {
 
     inspect(string){
         if(!this.regex) return this
-        this.loadString(string)
+        if(string) this.loadString(string)
         for(let key in this.regex){
             for(let regex of this.regex[key]){
                 let match = this.string.match(regex)
                 if(match) this.state[key] = match
             }
         }
-        if(this.mutator) Object.assign(this.state, this.mutator(this.state))
+        if(this.mutator) Object.assign(this.state, this.mutator(this))
         return this
     }
 
@@ -39,12 +40,15 @@ class StringSpector {
         this.string = string.join(' ')
         return this
     }
+
+    get(){
+        return this.state
+    }
 }
 
 exports = module.exports = (options = {}) => new StringSpector(options)
 
-exports = { 
-    junk: require('./junk'),
-    regex: require('./regex'),
-    mediaMutator: require('./mediaMutator'),
- }
+module.exports.junk = require('./junk'),
+module.exports.regex = require('./regex'),
+module.exports.mutator = require('./mutator')
+module.exports.examples = require('./examples')

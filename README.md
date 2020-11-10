@@ -33,3 +33,15 @@ console.log(metadata)
 
 */
 ```
+
+```js
+const { regex, mutator, junk, examples } = require('stringspector')
+const inspector = require('stringspector')({
+    regex,
+    mutator,
+    junk
+})
+
+const str = examples.movies[0]
+const res = inspector.loadString(str).filter().inspect().get()
+```
