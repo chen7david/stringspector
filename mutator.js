@@ -1,5 +1,5 @@
-module.exports = (object) => {
-    const {state, string} = object
+module.exports = (self) => {
+    const {state, string} = self
     if(state.episode){
         let [epId, s, e] = state.episode
         const name = string.split(epId)
@@ -23,7 +23,7 @@ module.exports = (object) => {
         state.id = id.replace('ff', '')
     }
 
-    state.query = object.string
+    state.query = self.string
 
     return state
 }

@@ -6,7 +6,7 @@ const inspector = require('./index')({
     junk
 })
 
-const str = examples.shows[9]
+const str = examples.movies[6]
 dd(str)
 const res = inspector.loadString(str).filter().inspect().get()
 
