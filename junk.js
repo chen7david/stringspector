@@ -1,18 +1,4 @@
 module.exports = [
-    // 'x264-caffeine', 
-    // '1080p',  
-    // 'webrip',
-    // '720p', 
-    // 'tgx',
-    // 'h264-cakes',
-    // 'web',
-    // 'ddp5',
-    // '[rartv]',
-    // 'mvk',
-    // '265-sigma',
-    // 'amzn',
-    // 'web-dl',
-    // 'x264', 
     /x\d*/g,
     /h26\d\.*/g,
     /26\d\.*/g,
@@ -27,16 +13,5 @@ module.exports = [
     /amzn/g,
     /ddp5/g,
     /rartv/g,
-    /\s5\s1/g
-    
-    //
-    // '650mb', 
-    // 'nitro', 
-    // '-xpoz',
-    // 'yts',
-    // 'mx',
-    // 'lt',
-    // 'x264-',
-    // 'mp4',
-    // 'mkv'
+    /\s5\s1/g,
 ]
