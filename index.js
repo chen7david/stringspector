@@ -30,7 +30,7 @@ class StringSpector {
     filter(){
         if(!this.string) return this
         let string = this.string.match(/[\w'-]+/g)
-        if(this.junk) string = string.filter(el => !this.junk.includes(el))
+        if(this.junk) string = string.filter(el => !this.junk.some(e => e.test(el)))
         this.string = string.join(' ')
         return this
     }
