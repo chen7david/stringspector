@@ -1,4 +1,4 @@
-const { find } = require('./langcodes')
+const p = require('path')
 
 const dd = (val) => console.log(val)
 
@@ -23,9 +23,16 @@ class StringSpector {
                 if(match) this.state[key] = match
             }
         }
+
         if(this.langcodes){
             let lang = this.langcodes.find(code => this.string.match(new RegExp(`\\b${code}\\b`)))
             if(lang) Object.assign(this.state, {lang})
+        }
+
+        if(this.extensions){
+            const ext = p.extname(this.original.toLowerCase())
+            let type = Object.keys(this.extensions).find(type => this.extensions[type].includes(ext))
+            if(type && type) Object.assign(this.state, {type, ext})
         }
 
         if(this.mutator) Object.assign(this.state, this.mutator(this))
@@ -52,3 +59,4 @@ module.exports.regex = require('./regex'),
 module.exports.mutator = require('./mutator')
 module.exports.examples = require('./examples')
 module.exports.langcodes = require('./langcodes')
+module.exports.extensions = require('./extensions')

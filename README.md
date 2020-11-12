@@ -45,11 +45,12 @@ console.log(metadata)
 ```
 
 ```js
-const { regex, mutator, junk, examples } = require('stringspector')
-const inspector = require('stringspector')({
+const { regex, mutator, junk, examples, langcodes } = require('stringspector')
+const inspector = require('./index')({
     regex,
     mutator,
-    junk
+    junk,
+    langcodes
 })
 
 const str = examples.movies[0]
