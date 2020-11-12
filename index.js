@@ -32,7 +32,7 @@ class StringSpector {
         if(this.extensions){
             const ext = p.extname(this.original.toLowerCase())
             let type = Object.keys(this.extensions).find(type => this.extensions[type].includes(ext))
-            if(type && type) Object.assign(this.state, {type, ext})
+            if(type) Object.assign(this.state, {type, ext})
         }
 
         if(this.mutator) Object.assign(this.state, this.mutator(this))

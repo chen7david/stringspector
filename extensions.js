@@ -4,6 +4,10 @@ module.exports = {
         '.mkv',
         '.avi',
         '.m4v',
+        '.mov',
+        '.flv',
+        '.avchd',
+        '.webm',
     ],
     audio: [
         '.mp3',
@@ -11,12 +15,19 @@ module.exports = {
         '.wma',
         '.wmv',
         '.wav',
+        '.aa',
+        '.3ag',
+        '.abc',
+        '.ac3',
     ],
     pdf: [
         '.pdf'
     ],
     presentation: [
         '.ppt',
+        '.pptx',
+        '.pptm',
+        '.pptx',
         '.keynote'
     ], 
     subtitle: [
@@ -24,5 +35,8 @@ module.exports = {
         '.vtt',
         '.ass',
         '.ssa',
+        '.ttml',
+        '.sbv',
+        '.dfxp',
     ]
 }
