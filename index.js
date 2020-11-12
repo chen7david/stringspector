@@ -1,3 +1,5 @@
+const { find } = require('./langcodes')
+
 const dd = (val) => console.log(val)
 
 class StringSpector {
@@ -21,6 +23,11 @@ class StringSpector {
                 if(match) this.state[key] = match
             }
         }
+        if(this.langcodes){
+            let lang = this.langcodes.find(code => this.string.match(new RegExp(`\\b${code}\\b`)))
+            if(lang) Object.assign(this.state, {lang})
+        }
+
         if(this.mutator) Object.assign(this.state, this.mutator(this))
         return this
     }
@@ -44,3 +51,4 @@ module.exports.junk = require('./junk'),
 module.exports.regex = require('./regex'),
 module.exports.mutator = require('./mutator')
 module.exports.examples = require('./examples')
+module.exports.langcodes = require('./langcodes')

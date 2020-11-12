@@ -1,6 +1,6 @@
 module.exports = {
     movies: [
-        'Dear Ex 720p SWEB-DL x264 650MB (nItRo)-XpoZ',
+        'Dear Ex 720p SWEB-DL x264 650MB (nItRo)-XpoZ.zh.ent.srt',
         'Hamilton (2020) [1080p] [WEBRip] [5.1] [YTS.MX]',
         'Interreflections (2020) [1080p] [WEBRip] [YTS.MX] ff234',
         'Jungle Beat The Movie (2020) [1080p] [WEBRip] [5.1] [YTS.MX]',
