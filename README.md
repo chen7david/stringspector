@@ -1,58 +1,30 @@
 # stringspector
 ```js
-const inpector = require('stringspector')({
-    junk: [/* some rex expression */, ...],
-    regex: { 
-        episode: [/* some rex expression */, ...], 
-        year: [/* some rex expression */, ...]
-    },
-    mutator: (self) => {
-        const {state, string} = self 
-        if(state.episode){
-            let [epId, s, e] = state.episode
-            const name = string.split(epId)
-            state.episode = {
-                s: s && epId.includes('s') ? parseInt(s,10): null,
-                e: e && epId.includes('e') ? parseInt(e,10): null,
-                epId,
-                name: name[1].replace(/^\s+|\s+$/g, '')   
-            }
-            state.show = name[0].replace(/^\s+|\s+$/g, '')
-        }
+const example_string = 'Rick.and.Morty.S05E01.Mort.Dinner.Rick.Andre.1080p.AS.WEBRip.AAC2.0.H264-BTN[TGx]'
+const inspector = require('stringspector')
+const metadata = inspector.inspect(example_string)
+    .lowercase()   // sets example_string to lowercase
+    .whitespace()  // removes all double or greater white space and trims
+    .specialchar() // removes all non alpha-nymerical characters
+    .movie()       // extracts movie data if available
+    .episode()     // extracts tv-show data if available
+    .year()        // extracts year if available
+    .resolution()  // extracts resolution if available
+    .filter()      // removes all metadata from example_string
+    .done()        // returns all matadata
 
-        if(state.year){
-            let [year] = state.year
-            state.year = year
-            state.movie = string.split(year)[0].replace(/^\s+|\s+$/g, '')
-        }
-
-        if(state.id){
-            let [id] = state.id
-            state.id = id.replace('ff', '')
-        }
-
-        state.query = self.string
-
-        return state
-    }
-})
-const string = 'Rick.and.Morty.S04E06.1080p.WEBRip.x264-CAFFEiNE[TGx]'
-const metadata = inpector.inspect().metadata(string)
-console.log(metadata)
-/*
-
-*/
+console.log({metadata})
 ```
-
-```js
-const { regex, mutator, junk, examples, langcodes } = require('stringspector')
-const inspector = require('./index')({
-    regex,
-    mutator,
-    junk,
-    langcodes
-})
-
-const str = examples.movies[0]
-const res = inspector.loadString(str).filter().inspect().get()
+##### console output
+```cmd
+{
+  metadata: {
+    episode: 1,
+    episode_id: 's05e01',
+    season: 5,
+    showname: 'rick and morty',
+    resolution: '1080p',
+    string: 'rick and morty mort dinner rick andre as webrip aac2 0 h264-btn tgx'
+  }
+}
 ```
