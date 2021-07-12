@@ -84,7 +84,7 @@ class Inspector {
 
         if(this.metadata.episode){
             const [episode_id, season, episode] = this.metadata.episode
-            Object.assign(this.metadata, {episode_id, season, episode})
+            Object.assign(this.metadata, {episode_id, season: parseInt(season, 10), episode: parseInt(episode, 10)})
         }
         this.showname()
         this.episodename()
